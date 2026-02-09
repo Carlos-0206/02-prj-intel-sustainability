@@ -1,0 +1,30 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="150" fill="#e8f4f8"/>
+  
+  <!-- Solar panel -->
+  <rect x="30" y="50" width="60" height="50" fill="#333"/>
+  
+  <!-- Solar cells -->
+  <rect x="35" y="55" width="13" height="13" fill="#FFD700"/>
+  <rect x="52" y="55" width="13" height="13" fill="#FFD700"/>
+  <rect x="69" y="55" width="13" height="13" fill="#FFD700"/>
+  <rect x="35" y="72" width="13" height="13" fill="#FFD700"/>
+  <rect x="52" y="72" width="13" height="13" fill="#FFD700"/>
+  <rect x="69" y="72" width="13" height="13" fill="#FFD700"/>
+  
+  <!-- Solar panel stand -->
+  <line x1="40" y1="100" x2="25" y2="130" stroke="#666" stroke-width="4"/>
+  <line x1="80" y1="100" x2="95" y2="130" stroke="#666" stroke-width="4"/>
+  
+  <!-- Ground -->
+  <rect x="10" y="130" width="180" height="20" fill="#8B7355"/>
+  
+  <!-- Sun rays -->
+  <circle cx="155" cy="45" r="15" fill="#FFD700" opacity="0.8"/>
+  <line x1="155" y1="15" x2="155" y2="0" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  <line x1="190" y1="45" x2="200" y2="45" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  <line x1="180" y1="20" x2="188" y2="12" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  <line x1="155" y1="75" x2="155" y2="90" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  <line x1="130" y1="55" x2="120" y2="65" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+</svg>

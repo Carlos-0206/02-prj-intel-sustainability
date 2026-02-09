@@ -1,1 +1,139 @@
 /* Add your CSS here */
+
+/* Body styling with white background */
+body {
+  background-color: rgba(11, 114, 187, 0.43); /* White background */
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header section styling */
+header {
+  background-color: #0071C5; /* Blue background for header */
+  padding: 40px 20px; /* Space inside the header */
+  margin-bottom: 40px; /* Space below the header */
+  text-align: center;
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Header container */
+header div {
+  max-width: 800px;
+  margin: 0 auto; /* Center the content */
+}
+
+/* Intel logo sizing */
+header img {
+  width: 250px; /* Set logo width */
+  margin-bottom: 20px; /* Space below logo */
+}
+
+/* Main heading styling */
+h1 {
+  color: white; /* White text color */
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 20px; /* Space below heading */
+}
+
+/* Header paragraph styling */
+header p {
+  color: white; /* White text color */
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Timeline section styling */
+section {
+  max-width: 100%; /* Full width for horizontal layout */
+  margin: 0 auto 40px auto; /* Center section and add space below */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  padding: 20px; /* Add padding */
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 20px; /* Space between cards */
+}
+
+/* Timeline card styling */
+section div {
+  background-color: #0071C5; /* Blue background for cards */
+  padding: 20px; /* Space inside each card */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  min-width: 250px; /* Minimum card width */
+  max-width: 250px; /* Maximum card width */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  text-align: center; /* Center text in cards */
+}
+
+/* Year heading in cards */
+h2 {
+  color: white; /* White text color */
+  font-size: 20px; /* Smaller font size */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 8px; /* Reduced space below year */
+  font-weight: bold; /* Make year bold */
+}
+
+/* Event title in cards */
+h3 {
+  color: white; /* White text color */
+  font-size: 16px; /* Smaller font size */
+  margin-top: 0;
+  margin-bottom: 10px; /* Reduced space below title */
+  font-weight: bold; /* Make title bold */
+}
+
+/* Images in timeline cards */
+section div img {
+  width: 100%; /* Make image fill card width */
+  max-width: 200px; /* Smaller maximum width */
+  height: auto; /* Keep image proportions */
+  margin-bottom: 10px; /* Reduced space below image */
+  border-radius: 4px; /* Slightly rounded corners */
+  display: block; /* Make image a block element */
+  margin-left: auto; /* Center image */
+  margin-right: auto; /* Center image */
+}
+
+/* Paragraph text in cards */
+section div p {
+  color: white; /* White text color */
+  font-size: 13px; /* Smaller font size */
+  line-height: 1.4; /* Tighter line height */
+  margin: 0; /* Remove default margins */
+  opacity: 0; /* Hide text by default */
+  transition: opacity 0.3s ease; /* Smooth transition effect */
+  text-align: left; /* Left align paragraph text */
+}
+
+/* Show paragraph text when hovering over card */
+section div:hover p {
+  opacity: 1; /* Make text visible on hover */
+}
+
+/* Footer text styling */
+body > p {
+  color: #0071C5; /* Blue text on white background */
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px; /* Space above footer text */
+}
+
+/* Media query for small screens (mobile/tablet) */
+/* Makes cards stack vertically instead of horizontally */
+@media (max-width: 768px) {
+  /* Stack cards vertically on small screens */
+  section {
+    flex-direction: column; /* Change to vertical stacking */
+    overflow-x: visible; /* Remove horizontal scroll */
+    align-items: center; /* Center cards */
+  }
+
+  /* Make cards full width on small screens */
+  section div {
+    max-width: 100%; /* Allow cards to use full width */
+    width: 100%; /* Cards take full container width */
+  }
+}
