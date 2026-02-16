@@ -55,6 +55,33 @@ section {
   gap: 20px; /* Space between cards */
 }
 
+/* Second section with three columns */
+section:nth-of-type(2) {
+  overflow-x: visible; /* Remove horizontal scroll for columns section */
+}
+
+/* Subscription form section layout */
+section:nth-of-type(3) {
+  flex-direction: column; /* Stack heading and form */
+  align-items: center; /* Center the form on larger screens */
+  overflow-x: visible; /* Avoid horizontal scroll */
+}
+
+/* Wrapper div for three columns */
+section:nth-of-type(2) > div {
+  display: flex; /* Make columns display horizontally */
+  gap: 20px; /* Space between columns */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Reset max-width */
+}
+
+/* Individual column styling */
+section:nth-of-type(2) div div {
+  flex: 1; /* Equal width for all three columns */
+  max-width: none; /* Reset max-width */
+  min-width: 200px; /* Minimum width for each column */
+}
+
 /* Timeline card styling */
 section div {
   background-color: #0071C5; /* Blue background for cards */
@@ -74,6 +101,8 @@ h2 {
   margin-top: 0; /* Remove top margin */
   margin-bottom: 8px; /* Reduced space below year */
   font-weight: bold; /* Make year bold */
+  direction: rtl; /* Right-to-left text flow */
+  text-align: right; /* Align text to the right */
 }
 
 /* Event title in cards */
@@ -83,6 +112,26 @@ h3 {
   margin-top: 0;
   margin-bottom: 10px; /* Reduced space below title */
   font-weight: bold; /* Make title bold */
+  direction: rtl; /* Right-to-left text flow */
+  text-align: right; /* Align text to the right */
+}
+
+/* Icons and text in the three column headers */
+.column-title {
+  display: flex; /* Put the icon and text on one line */
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: flex-end; /* Keep the group aligned to the right */
+  gap: 8px; /* Small space between icon and text */
+  direction: ltr; /* Keep icon on the left side */
+}
+
+.column-title .column-text {
+  direction: rtl; /* Keep the text flowing right-to-left */
+}
+
+.column-title .column-icon {
+  font-size: 18px; /* Simple icon size */
+  line-height: 1; /* Remove extra vertical space */
 }
 
 /* Images in timeline cards */
@@ -103,13 +152,41 @@ section div p {
   font-size: 13px; /* Smaller font size */
   line-height: 1.4; /* Tighter line height */
   margin: 0; /* Remove default margins */
-  opacity: 0; /* Hide text by default */
-  transition: opacity 0.3s ease; /* Smooth transition effect */
-  text-align: left; /* Left align paragraph text */
+  direction: rtl; /* Right-to-left text flow */
+  text-align: right; /* Align text to the right */
 }
 
-/* Show paragraph text when hovering over card */
-section div:hover p {
+/* Links in cards and columns */
+section div a {
+  direction: rtl; /* Right-to-left text flow */
+  text-align: right; /* Align text to the right */
+  display: inline-block; /* Keep alignment consistent */
+}
+
+/* Contrasting box for the Learn More links */
+section:nth-of-type(2) a {
+  background-color: white; /* High contrast against blue card */
+  color: #0071C5; /* Match the theme blue */
+  padding: 8px 12px; /* Space inside the box */
+  border: 2px solid #0071C5; /* Clear outline */
+  border-radius: 6px; /* Soft corners */
+  text-decoration: none; /* Remove underline */
+  margin-top: 12px; /* Space above the button */
+}
+
+/* Darker shade on hover for Learn More boxes */
+section:nth-of-type(2) a:hover {
+  background-color: #cfe2f3; /* Darker shade on hover */
+}
+
+/* Only the timeline cards use hover-to-reveal text */
+section:first-of-type div p {
+  opacity: 0; /* Hide text by default */
+  transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+/* Show paragraph text when hovering over a timeline card */
+section:first-of-type div:hover p {
   opacity: 1; /* Make text visible on hover */
 }
 
@@ -119,6 +196,38 @@ body > p {
   text-align: center;
   font-size: 16px;
   margin-top: 20px; /* Space above footer text */
+}
+
+/* Footer section styling */
+footer {
+  background-color: #0071C5; /* Match header and card color */
+  color: white; /* White text for contrast */
+  text-align: center; /* Center footer content */
+  padding: 20px; /* Space inside the footer */
+  border-radius: 8px; /* Rounded corners */
+}
+
+footer p {
+  margin: 0 0 10px; /* Space below the copyright line */
+  direction: rtl; /* Right-to-left text flow */
+}
+
+footer nav {
+  display: flex; /* Put links on one line */
+  justify-content: center; /* Center the links */
+  gap: 16px; /* Space between links */
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+footer a {
+  color: white; /* Keep links readable */
+  text-decoration: none; /* Remove underline */
+  border-bottom: 1px solid white; /* Simple underline style */
+  padding-bottom: 2px; /* Space for the underline */
+}
+
+footer a:hover {
+  opacity: 0.8; /* Subtle hover effect */
 }
 
 /* Media query for small screens (mobile/tablet) */
@@ -135,5 +244,17 @@ body > p {
   section div {
     max-width: 100%; /* Allow cards to use full width */
     width: 100%; /* Cards take full container width */
+  }
+
+  /* Stack three columns vertically on small screens */
+  section:nth-of-type(2) > div {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: stretch; /* Make all columns the same width */
+  }
+
+  section:nth-of-type(2) div div {
+    width: 100%; /* Full width on small screens */
+    max-width: 100%; /* Keep columns even */
+    box-sizing: border-box; /* Include padding in width */
   }
 }
